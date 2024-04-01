@@ -11,7 +11,13 @@
 
 
 ### 1. Overall Pipeline
-
+---
 ![Example Image](/images/pipeline.png)
 
+* Question을 식별하기 위한 YOLOv7
+* Question num을 인식하기 위한 PORORO
+
+### 2. Model
+---
+# 1) YOLOv7
 
