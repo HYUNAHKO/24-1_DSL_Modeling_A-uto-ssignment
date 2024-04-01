@@ -21,3 +21,4 @@
 ---
 ### 1) YOLOv7
 
+![Example Image](/images/YOLOv7_architecture.png)
