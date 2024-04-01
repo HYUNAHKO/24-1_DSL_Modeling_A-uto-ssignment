@@ -7,17 +7,17 @@
 ### Team 유현동 정성오 김현동 고현아
 ---
 # Overview
-[![발표 자료](/DSL_CV_Modeling.pdf)]
+[![발표 자료](/24-1_Modeling_CV_A(uto)ssignment.pdf)]
 
 
-### 1. Overall Pipeline
+## 1. Overall Pipeline
 ---
 ![Example Image](/images/pipeline.png)
 
 * Question을 식별하기 위한 YOLOv7
 * Question num을 인식하기 위한 PORORO
 
-### 2. Model
+## 2. Model
 ---
-# 1) YOLOv7
+### 1) YOLOv7
 
