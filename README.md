@@ -7,7 +7,7 @@
 ### Team 유현동 정성오 김현동 고현아
 ---
 # Overview
-[![발표 자료](/24-1_Modeling_CV_A(uto)ssignment.pdf)]
+[[발표 자료](/24-1_Modeling_CV_A(uto)ssignment.pdf)]
 
 
 ## 1. Overall Pipeline
