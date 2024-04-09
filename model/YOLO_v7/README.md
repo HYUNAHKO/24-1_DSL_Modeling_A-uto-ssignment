@@ -4,7 +4,7 @@
 Download the pretrained parameter([link](https://drive.google.com/drive/folders/1irEt-TOAn0N1XDr1AVw2OAW9sxGzWatE?usp=sharing)).
 
 - `yolov7x.pt`: pretrained parameter for YOLOv7-X model
-- `YOLOv7_fine_tuned_params.pt`: pretrained parameter for detecting exercise questions by a textbook, **Introduction to Mathematical Statistics, 8th edition**
+- `YOLOv7_fine_tuned_params.pt`: pretrained parameter for detecting exercise questions by a textbook, [**Introduction to Mathematical Statistics, 8th edition**](../../dataset/Introduction_to_Mathematical_Statistics.pdf)
 
 
 ### Single GPU finetuning for custom dataset
@@ -56,7 +56,9 @@ python detect.py --weights YOLOv7_fine_tuned_params.pt \
 </pre>
 
 Example result
+
 ![](./README_imgs/example_result_for_a_page.jpg)
+
 </div>
 </details>
 
@@ -84,11 +86,14 @@ python detect_and_crop_questions.py --weights YOLOv7_fine_tuned_params.pt \
 </div>
 
 Example results
+
 - Exercise 2.4.6
-![](./README_imgs/question_2.4.6.jpg)
+
+    ![](./README_imgs/question_2.4.6.jpg)
 
 - Exercise 3.6.4
-![](./README_imgs/question_3.6.4.jpg)
+
+    ![](./README_imgs/question_3.6.4.jpg)
 </details>
 
 
