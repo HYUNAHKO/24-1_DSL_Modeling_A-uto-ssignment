@@ -12,38 +12,43 @@
 ## 0. 목적 
 두꺼운 전공 교재의 페이지를 넘기면서 문제를 찾고, 이를 메모장에 일일이 옮기는 작업을 자동화해주기 위함이다. 
 
-## 1. Overall Pipeline & Dataset 구축
+## 1. Overall Pipeline 
 ---
 ![Example Image](/images/pipeline.png)
 
 * Question을 식별하기 위한 YOLOv7
 * Question num을 인식하기 위한 PORORO
+
 ---
-* Dataset - 수리통계학 교재 이용
-Caption, code, image, image_caption, page_num, question, question_num, table, table_caption, text, title와 같이 11개의 class labeling 진행
 
 ## 2. Model
 ---
-### 1) YOLOv7
+### 1) PDF to image
+---
+* 'fitz': 이 모듈은 PyMuPDF 라이브러리의 일부로, PDF 파일을 다루기 위해 사용됩니다.
+* 역할 : 교재 pdf를 input으로 받으면, 각 페이지를 image로 변환 
+* Installation and run : 'pdf_to_image.py'
 
-![Example Image](/images/YOLOv7_architecture.png)
+### 2) YOLOv7
+
+![슬라이드11](https://github.com/DataScience-Lab-Yonsei/24-1_DSL_Modeling_A-uto-ssignment/assets/126374997/6c6b9b56-68f6-44b4-a228-a8c6343cd55a)
 
 "You Only Look Once" 시리즈의 최신 버전 중 하나로, 실시간 객체 탐지를 위한 딥러닝 모델이다. YOLO v7 말고 v6, v8도 사용했는데, bounding box 정확성 수치와 최종 결과가 v7이 가장 정확하게 나와 채택했습니다. 
-YOLOv7의 구조는 위의 사진과 같습니다. 
-YOLOv7은 이전 모델보다 최적화뿐만 아니라 훈련 과정 또한 최적화하고자 했다. 구조에 대해 간단하게 설명을 하자면 다음과 같다.
-1. Extended efficient layer aggregation networksPermalink
-Gradient가 짧을수록 모델이 강력하게 학습할 수 있기에 효율적으로 확장, 셔플, 병합하는 E-ELAN 구조를 사용한다.
 
-2. Model scaling for concatenation-based models
-모델 스케일링은 모델을 fine tuning 시켜 추론(inference) 속도를 목적에 맞게 충족시키고자 다양한 스케일의 모델을 생성하는 것이다.
+[YOLOv7 paper](https://arxiv.org/abs/2207.02696)
 
-3. Planned re-parameterized convolutionPermalink
-네트워크의 순서를 바꿔 추론 비용을 증가시키지 않고 성능을 향상시키는 방법을 이용했다.
+* Roboflow를 통해 Image Segmentation이 완료된 훈련 데이터를 입력으로 받아, YOLOv7 fine-tuning 진행
+* 이후 입력된 이미지에서 'question' 부분을 탐지하고 해당 부분을 crop하여 이미지로 저장
 
-4. Coarse for auxiliary and fine for lead loss
-레이블 할당 전략은 네트워크 학습을 지원하기 위해 coarse-to-fine lead head guided label assigner를 통해 auxiliary head와 lead head에 soft label을 할당하는 방법을 이용한다.
+#### Result 
+---
+![슬라이드12](https://github.com/DataScience-Lab-Yonsei/24-1_DSL_Modeling_A-uto-ssignment/assets/126374997/c777eadb-cfb7-4e53-b83f-59f013593c7a)
 
-결과 
 
-### 2) PORORO ; Optical Character Recognition 
+### 3) PORORO ; Optical Character Recognition 
+
+![슬라이드14](https://github.com/DataScience-Lab-Yonsei/24-1_DSL_Modeling_A-uto-ssignment/assets/126374997/f435adeb-ab25-4260-b598-54a24b453e01)
+
+* YOLOv7 모델을 통해 추출된 문제 이미지에서 문제 번호를 정확하게 식별하고, 이를 파일명으로 사용하여 이미지를 저장하기 위해 사용
+
 
