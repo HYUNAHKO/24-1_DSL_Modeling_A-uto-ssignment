@@ -53,7 +53,7 @@
 
 ## Dataset
 ---
-* Introduction to Mathematical Statistics
+* Introduction to Mathematical Statistics PDF
 
 ## Final Result
 ---
