@@ -69,4 +69,14 @@
 ---
 ![슬라이드25](https://github.com/DataScience-Lab-Yonsei/24-1_DSL_Modeling_A-uto-ssignment/assets/126374997/648d12d0-94a6-4ad4-99f4-a3f3af30cf11)
 
-
+## File Description
+---
+* Pdf To Image
+    * 'pdf_to_image.py'
+* YOLOv7
+    * 'yolov7x.pt' : pretrained parameter for Yolov7-X model
+    * 'YOLOv7_fine_tuned_params.pt' :pretrained parameter by a textbook (Introduction to Mathemtical Statistics)
+* PORORO
+    * 'pororo_implementation.py' : OCR model
+* User Interaction
+    * 위의 전체 모델을 연결하여 최종 결과를 도출해내는 py 파일
